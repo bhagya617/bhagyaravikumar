@@ -1,0 +1,159 @@
+1)Write a C# Sharp program to accept two integers and check whether they are equal or not. 
+
+using System;
+namespace prog{
+class Program
+{
+    static void Main()
+    {
+        
+        Console.Write("Enter the first integer: ");
+        int firstNumber = Convert.ToInt32(Console.ReadLine());
+
+        
+        Console.Write("Enter the second integer: ");
+        int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+        
+        if (firstNumber == secondNumber)
+        {
+            Console.WriteLine("The two integers are equal.");
+        }
+        else
+        {
+            Console.WriteLine("The two integers are not equal.");
+        }
+    }
+}}
+
+2)Write a C# Sharp program to check whether a given number is positive or negative.
+
+using System;
+namespace prog{
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        string input = Console.ReadLine();
+        
+        
+        if (double.TryParse(input, out double number))
+        {
+            if (number > 0)
+            {
+                Console.WriteLine("The number is positive.");
+            }
+            else if (number < 0)
+            {
+                Console.WriteLine("The number is negative.");
+            }
+            else
+            {
+                Console.WriteLine("The number is zero.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+    }
+}
+}
+
+3)Write a C# Sharp program that takes two numbers as input and performs all operations (+,-,*,/) on them and displays the result of that operation. 
+
+
+using System;
+namespace prog{
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        double firstNumber = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double secondNumber = Convert.ToDouble(Console.ReadLine());
+
+        
+        double addition = firstNumber + secondNumber;
+        double subtraction = firstNumber - secondNumber;
+        double multiplication = firstNumber * secondNumber;
+        
+        double division;
+        if (secondNumber != 0)
+        {
+            division = firstNumber / secondNumber;
+        }
+        else
+        {
+            division = double.NaN; // Set to NaN to indicate undefined
+        }
+
+        Console.WriteLine($"Addition: {firstNumber} + {secondNumber} = {addition}");
+        Console.WriteLine($"Subtraction: {firstNumber} - {secondNumber} = {subtraction}");
+        Console.WriteLine($"Multiplication: {firstNumber} * {secondNumber} = {multiplication}");
+
+        if (secondNumber != 0)
+        {
+            Console.WriteLine($"Division: {firstNumber} / {secondNumber} = {division}");
+        }
+        else
+        {
+            Console.WriteLine("Division: Cannot divide by zero.");
+        }
+    }
+}
+}
+
+4)Write a C# Sharp program that prints the multiplication table of a number as input.
+
+
+using System;
+namespace prog{
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number to print its multiplication table: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"Multiplication Table for {number}:");
+        for (int i = 1; i <= 10; i++)
+        {
+            int result = number * i;
+            Console.WriteLine($"{number} x {i} = {result}");
+        }
+    }
+}
+}
+
+5) Write a C# program to compute the sum of two given integers. If two values are the same, return the triple of their sum.
+
+using System;
+namespace prog{
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the first integer: ");
+        int firstNumber = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second integer: ");
+        int secondNumber = Convert.ToInt32(Console.ReadLine());
+
+        int result;
+        if (firstNumber == secondNumber)
+        {
+            result = (firstNumber + secondNumber) * 3; // Triple the sum
+        }
+        else
+        {
+            result = firstNumber + secondNumber; // Regular sum
+        }
+
+        Console.WriteLine($"The result is: {result}");
+    }
+}
+}
