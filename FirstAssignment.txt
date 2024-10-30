@@ -1,7 +1,8 @@
 1)Write a C# Sharp program to accept two integers and check whether they are equal or not. 
 
 using System;
-namespace prog{
+namespace Programs
+{
 class Program1
 {
     static void Main()
@@ -29,7 +30,8 @@ class Program1
 2)Write a C# Sharp program to check whether a given number is positive or negative.
 
 using System;
-namespace prog{
+namespace Programs
+{
 class Program2
 {
     static void Main()
@@ -65,53 +67,63 @@ class Program2
 
 
 using System;
-namespace prog{
-class Program3
+
+namespace Programs
 {
-    static void Main()
+    class Program3
     {
-        Console.Write("Enter the first number: ");
-        double firstNumber = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Enter the second number: ");
-        double secondNumber = Convert.ToDouble(Console.ReadLine());
-
-        
-        double addition = firstNumber + secondNumber;
-        double subtraction = firstNumber - secondNumber;
-        double multiplication = firstNumber * secondNumber;
-        
-        double division;
-        if (secondNumber != 0)
+        static void Main()
         {
-            division = firstNumber / secondNumber;
-        }
-        else
-        {
-            division = double.NaN; // Set to NaN to indicate undefined
-        }
+            Console.Write("Enter the first number: ");
+            double firstNumber = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine($"Addition: {firstNumber} + {secondNumber} = {addition}");
-        Console.WriteLine($"Subtraction: {firstNumber} - {secondNumber} = {subtraction}");
-        Console.WriteLine($"Multiplication: {firstNumber} * {secondNumber} = {multiplication}");
+            Console.Write("Enter the second number: ");
+            double secondNumber = Convert.ToDouble(Console.ReadLine());
 
-        if (secondNumber != 0)
-        {
-            Console.WriteLine($"Division: {firstNumber} / {secondNumber} = {division}");
-        }
-        else
-        {
-            Console.WriteLine("Division: Cannot divide by zero.");
+            Console.WriteLine("Select an operation: +, -, *, /");
+            char operation = Console.ReadKey().KeyChar;
+            Console.WriteLine(); 
+
+            switch (operation)
+            {
+                case '+':
+                    Console.WriteLine($"Addition: {firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+                    break;
+
+                case '-':
+                    Console.WriteLine($"Subtraction: {firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+                    break;
+
+                case '*':
+                    Console.WriteLine($"Multiplication: {firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+                    break;
+
+                case '/':
+                    if (secondNumber != 0)
+                    {
+                        Console.WriteLine($"Division: {firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Division: Cannot divide by zero.");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid operation. Please select +, -, *, or /.");
+                    break;
+            }
         }
     }
 }
-}
+
 
 4)Write a C# Sharp program that prints the multiplication table of a number as input.
 
 
 using System;
-namespace prog{
+namespace Programs
+{
 class Program4
 {
     static void Main()
@@ -132,7 +144,8 @@ class Program4
 5) Write a C# program to compute the sum of two given integers. If two values are the same, return the triple of their sum.
 
 using System;
-namespace prog{
+namespace Programs
+{
 class Program5
 {
     static void Main()
