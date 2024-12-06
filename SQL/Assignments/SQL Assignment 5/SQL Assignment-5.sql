@@ -37,7 +37,7 @@ END;
  @employeeid=101,@salary=50000;
 
 
---Q2==>> 2.  Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like ìDue to Independence day you cannot manipulate dataî or "Due To Diwali", you cannot manipulate" etc
+--Q2==>> 2.  Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like ‚ÄúDue to Independence day you cannot manipulate data‚Äù or "Due To Diwali", you cannot manipulate" etc
 
 CREATE TABLE Holidays (
     holiday_date DATE NOT NULL,
@@ -55,7 +55,7 @@ VALUES
 
 CREATE TABLE EMP (
     EmployeeID INT PRIMARY KEY,
-    Name NVARCHAR(50),
+    Name VARCHAR(50),
     Salary FLOAT
 );
  
@@ -66,7 +66,7 @@ AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
     DECLARE @today DATE = CAST(GETDATE() AS DATE);
-    DECLARE @holiday_name NVARCHAR(50);
+    DECLARE @holiday_name VARCHAR(50);
  
     SELECT @holiday_name = holiday_name
     FROM Holidays
@@ -85,6 +85,3 @@ VALUES (1011, 'Jane desoza', 50000);
  
 
 DELETE FROM Holidays WHERE holiday_date = CAST(GETDATE() AS DATE);
- 
-INSERT INTO EMP (EmployeeID, Name, Salary)
-VALUES (102, 'Jones Aron', 60000);
