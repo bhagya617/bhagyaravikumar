@@ -40,9 +40,9 @@ BEGIN
     WHILE @Multiplier <= @MaxMultiplier
     BEGIN
         INSERT INTO #MultiplicationTable (Multiplier, Result)
-        VALUES (@Multiplier, @Number * @Multiplier);  -- Fixed multiplication statement
+        VALUES (@Multiplier, @Number * @Multiplier);  
 
-        SET @Multiplier = @Multiplier + 1;  -- Corrected assignment statement
+        SET @Multiplier = @Multiplier + 1; 
     END
 
     SELECT * FROM #MultiplicationTable;
